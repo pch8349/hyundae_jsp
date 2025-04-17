@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function openBlank(){
+      open();
+    }
+
+    function openSite(){
+      open("http://www.google.com");
+    }
+
+    function openWindow(){
+      open("http://www.naver.com","myWin","width=600,height=400,left=300,top=300");
+    }
+  </script>
+</head>
+<body>
+
+
+<input type="button" value="빈화면" onclick="openBlank()">
+<input type="button" value="웹사이트" onclick="openSite()">
+<input type="button" value="윈도우" onclick="openWindow()">
+
+</body>
+</html>

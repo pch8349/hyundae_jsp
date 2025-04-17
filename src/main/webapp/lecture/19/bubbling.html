@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #div01 {
+            background-color: gold;
+            width: 600px;
+            height: 400px;
+        }
+
+        #div02 {
+            background-color: orange;
+            width: 400px;
+            height: 200px;
+        }
+
+        #div03 {
+            background-color: red;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="div01">
+    <div id="div02">
+        <div id="div03"></div>
+    </div>
+</div>
+
+<script>
+    function fnDiv01() {
+        alert("div01");
+    }
+
+    function fnDiv02() {
+        alert("div02");
+    }
+    function fnDiv03() {
+        alert("div03");
+    }
+
+    const div01 = document.querySelector("#div01");
+    div01.addEventListener("click", fnDiv01, true);
+
+    const div02 = document.querySelector("#div02");
+    div02.addEventListener("click", fnDiv02, true);
+
+    const div03 = document.querySelector("#div03");
+    div03.addEventListener("click", fnDiv03, true);
+</script>
+</body>
+</html>

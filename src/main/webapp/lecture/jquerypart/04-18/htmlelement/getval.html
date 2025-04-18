@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn01").click(function(){
+                let value = $("#editor").val();
+                $("#target").html(value);
+            })
+
+            $("#btn02").click(function(){
+                $("#editor").val("");
+                $("#target").html("Welcome");
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="target">Welcome</div>
+<br>
+<input type="text" id="editor" class="w600">
+<br>
+<br>
+<input type="button" id="btn01" value="설정" class="w200">
+<input type="button" id="btn02" value="초기화" class="w200">
+
+</body>
+</html>

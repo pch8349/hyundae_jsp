@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn01").click(function(){
+                let html = '<div id="div02">hello</div>';
+                $("#div01").prepend(html);
+            })
+
+            $("#btn02").click(function(){
+                let html = '<div id="div03">good</div>';
+                $("#div01").append(html);
+            })
+        })
+    </script>
+    <style>
+        #div01 {
+            background-color: gold;
+            width: 400px;
+            height: 200px;
+        }
+
+        #div02 {
+            background-color: orange;
+            width: 400px;
+            height: 200px;
+        }
+
+        #div03 {
+            background-color: aquamarine;
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="div01">안녕하세요</div>
+<br>
+<br>
+<input type="button" id="btn01" value="앞에 추가">
+<input type="button" id="btn02" value="뒤에 추가">
+</body>
+</html>

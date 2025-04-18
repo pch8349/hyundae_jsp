@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+      $(document).ready(function(){
+          $(":button").mouseover()(function(){
+              $(this).css("background-color", "black");
+              $(this).css("color","red");
+          });
+
+          $(":button").mouseout(function(){
+              $(this).css("background-color","#D5DBDB");
+              $(this).css("color","black");
+          });
+      })
+    </script>
+</head>
+<body>
+<input type="button" value="Welcome">
+<input type="button" value="Hello">
+
+</body>
+</html>

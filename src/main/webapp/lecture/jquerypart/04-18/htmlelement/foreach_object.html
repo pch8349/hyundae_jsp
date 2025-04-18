@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            let citys=[
+                {kor:"서울", eng:'seoul'},
+                {kor:"제주", eng:'jeju'},
+                {kor:"런던", eng:'london'},
+                {kor:"파리", eng:'paris'},
+            ];
+            console.log("===for()===")
+            for(let i = 0; i<citys.length; i++){
+                console.log(i, citys[i].kor, citys[i].eng);
+            }
+
+            console.log("\n====forEach()====")
+            citys.forEach(function(element, index){
+                console.log(index, element.kor, element.eng);
+            });
+
+            console.log("\n====$.each()====")
+            $.each(citys, function (index, element){
+                console.log(index, element.kor, element.eng);
+            })
+        })
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function (){
+      $("#allInfo").click(function(){
+
+        let list = $("input[name=food]").val();
+
+        alert(list);
+
+        // alert("헬로");
+      })
+
+      $("#checkedInfo").click(function(){
+
+
+        let list = $("input[name=food]:checked").val();
+
+        alert(list.length);
+      })
+
+    })
+  </script>
+</head>
+<body>
+좋아하는 음식은?
+<br>
+<br>
+<input type="checkbox" name="food" value="ramen" class="food" id="food01"> 라면
+<br>
+<input type="checkbox" name="food" value="kimbap" class="food" id="food02"> 김밥
+<br>
+<input type="checkbox" name="food" value="pasta" class="food" id="food03"> 파스타
+<br>
+<br>
+<br>
+<input type="button" value="전체정보" id="allInfo">
+<input type="button" value="체크정보" id="checkedInfo">
+</body>
+</html>

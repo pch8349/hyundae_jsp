@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#foodAll").click(function (){
+                let val = $("#foodAll").prop("checked");
+                $('.food').prop("checked", val);
+            })
+            $("#btn01").click(function(){
+                $("#foodAll").prop("checked", true);
+                $('.food').prop("checked", true);
+            })
+
+            $("#btn02").click(function(){
+                $("#foodAll").prop("checked", false);
+                $('.food').prop("checked", false);
+            })
+        })
+    </script>
+
+</head>
+<body>
+<input type="checkbox" id="foodAll" value=""> 전체선택
+<br>
+<input type="checkbox" name="food" value="ramen" class="food" id="food01"> 라면
+<br>
+<input type="checkbox" name="food" value="kimbap" class="food" id="food02"> 김밥
+<br>
+<input type="checkbox" name="food" value="pasta" class="food" id="food03"> 파스타
+<br>
+<br>
+<input type="button" id="btn01" value="선택">
+<input type="button" id="btn02" value="해제">
+
+</body>
+</html>

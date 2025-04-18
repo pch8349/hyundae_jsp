@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#calc").on("click", function(){
+                let val1 = Number($("#val1").val());
+                let val2 = Number($("#val2").val());
+                let sign = $("#sign").val();
+
+                if(sign === "+"){
+                    $("#result").val(val1+val2);
+                } else if(sign === "-"){
+                    $("#result").val(val1-val2);
+                }else if(sign === "/"){
+                    $("#result").val(val1/val2);
+                }else if(sign === "%"){
+                    $("#result").val(val1%val2);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="number" id="val1">
+<select id="sign" size="1">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+</select>
+<input type="number" id="val2">
+=
+<input type="number" id="result">
+<br><br>
+<button type="button" id="calc">연산</button>
+</body>
+</html>

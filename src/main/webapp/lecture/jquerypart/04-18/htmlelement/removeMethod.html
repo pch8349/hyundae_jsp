@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn01").click(function(){
+                $("p").remove();
+            });
+
+            $("#btn02").click(function(){
+                $("p").remove("#p02, #p03");
+            });
+        })
+    </script>
+
+</head>
+<body>
+<p id="p01">아침</p>
+<p id="p02">점심</p>
+<p id="p03">저녁</p>
+<input type="button" id="btn01" value="전체삭제">
+<input type="button" id="btn02" value="일부삭제">
+</body>
+</html>

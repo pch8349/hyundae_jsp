@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input[name=onOff]").change(function(){
+                console.log("\n=====input[name=onOff].change=====");
+
+                console.log("[on]prop() = ", $('#on').prop("checked"));
+                console.log("[off]prop() = ", $('#off').prop("checked"));
+
+                console.log("[off]is() = ", $('#on').is(":checked"));
+                console.log("[off]is() = ", $('#off').is(":checked"));
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="checkbox" name="onOff" value="on" class="onOff" id="on" checked>&nbsp;&nbsp;온
+<input type="checkbox" name="onOff" value="off" class="onOff" id="off">&nbsp;&nbsp;오프
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        let menu = [];
+        $(document).ready(function (){
+            $(".food").click(function (){
+                let now = $(this).val();
+                menu.forEach(function(element, index){
+                    if(element === now) {
+                        
+                    }
+                })
+                alert($(this).prop("checked")+" " + $(this).val())
+            })
+        })
+    </script>
+</head>
+<body>
+
+메뉴
+<br><br>
+<input type="checkbox" name="food" value="2000" class="food" id="food01"> 라면(2000원)
+<br>
+<input type="checkbox" name="food" value="3000" class="food" id="food02"> 김밥(3000원)
+<br>
+<input type="checkbox" name="food" value="5000" class="food" id="food03"> 떡볶이(5000원)
+<br>
+<input type="checkbox" name="food" value="12000" class="food" id="food04"> 파스타(12000원)
+<br><br>
+<input type="text" id="result" readonly class="w600">
+<br>
+<br>
+<input type="button" id="btn01" value="초기화" class="w200">
+
+</body>
+</html>

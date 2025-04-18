@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function (){
+      $("#color").on("change", function(){
+        let val = $(this).val();
+        alert(val);
+
+        $("body").css("background-color", val);
+      })
+    })
+  </script>
+</head>
+<body>
+<select id="color" size="1">
+  <option value="white">white</option>
+  <option value="red">red</option>
+  <option value="orange">orange</option>
+  <option value="yellow">yellow</option>
+  <option value="blue">blue</option>
+  <option value="black">black</option>
+</select>
+</body>
+</html>

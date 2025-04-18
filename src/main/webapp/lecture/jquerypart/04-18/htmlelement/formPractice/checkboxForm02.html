@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#agree").prop("checked", true);
+
+            $("#btn01").click(function(){
+                $("#agree").prop("checked", true);
+            })
+
+            $("#btn02").click(function(){
+                $("#agree").prop("checked", false);
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="checkbox" name="agree" value="agree" class="agree" id="agree"> 동의
+<br>
+<br>
+<input type="button" id="btn01" value="선택">
+<input type="button" id="btn02" value="해제">
+</body>
+</html>

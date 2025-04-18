@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    let data = [
+      { name:"food", value: "ramen", id:"food1", checked:false,  text: "라면"  },
+      { name:"food", value: "kimbop", id:"food2", checked:true, text: "김밥"  },
+      { name:"food", value: "pasta", id:"food3", checked:false, text: "파스타" }
+    ];
+
+    $(document).ready(function (){
+      $("#food").prepend("<input type=\"checkbox\" id=\"foodAll\" value=\"\"> 전체선택");
+      $("#food").append("<br>");
+      for(let i = 0; i<data.length; i++){
+        $("#food").append("<input type=\"checkbox\" name="+data[i].name+"value="+data[i].value+"id="+data[i].id+"checked="+data[i].checked+">"+data[i].text);
+        $("#food").append("<br>");
+      }
+    })
+  </script>
+</head>
+<body>
+
+<div id="food"></div>
+
+</body>
+</html>

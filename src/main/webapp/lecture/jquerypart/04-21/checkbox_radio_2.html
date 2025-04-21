@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#allInfo").click(function(){
+                console.log("\n=====allInfo====")
+
+                let list = $("#food option");
+
+                for(let i = 0; i<list.length; i++){
+                    let index = $(list[i]).index();
+                    let val = $(list[i]).val();
+                    let text = $(list[i]).text();
+                    console.log("index=",index,"|val=",val,"|text=",text);
+                }
+            })
+
+            $("#selectedInfo").click(function(){
+                console.log("\n=====selectedInfo=====");
+
+                let index = $("#food optino:selected").index();
+                let val = $("#food").val();
+                let text = $("#food option:selected").text();
+                console.log("index=",index,"|val=",val,"|text=",text);
+            })
+        })
+    </script>
+</head>
+<body>
+<select id="food">
+    <option value="ramen ">라면</option>
+    <option value="kimbop">김밥</option>
+    <option value="pasta">파스타</option>
+</select>
+<br>
+<br>
+<input type="button" value="전체정보" id="allInfo">
+<input type="button" value="선택정보" id="selectedInfo">
+</body>
+</html>

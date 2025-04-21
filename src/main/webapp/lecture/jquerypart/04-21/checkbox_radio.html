@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#allInfo").click(function(){
+        console.log("\n=====allInfo=====")
+
+        let list = $("input[name=food]");
+
+        console.log("전체 개수=", list.length);
+
+        for(let i = 0; i<list.length; i++){
+          let val = $(list[i]).val();
+          console.log("list[",i,"]=",val);
+        }
+
+        $("#checkedInfo").click(function(){
+          console.log("\n=====checkedInfo=====")
+
+          let list = $("input[name=food]:checked");
+
+          console.log("체크 개수=",list.length);
+
+          for(let i = 0; i<list.length; i++){
+            let val = $(list[i]).val();
+            console.log("list[",i,"]=",val);
+          }
+        })
+
+      })
+    })
+  </script>
+</head>
+<body>
+<body>
+좋아하는 음식은?
+<br>
+<br>
+<input type="radio" name="food" value="ramen" class="food"
+       id="food01"> 라면
+<br>
+<input type="radio" name="food" value="kimbap" class="food"
+       id="food02"> 김밥
+<br>
+<input type="radio" name="food" value="pasta" class="food"
+       id="food03"> 파스타
+<br>
+<br>
+<br>
+<input type="button" value="전체정보" id="allInfo">
+<input type="button" value="체크정보" id="checkedInfo">
+</body>
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    table {
+      width: 80%;
+      margin: auto;
+      border: 1px solid #ccc;
+      border-spacing: 1px;
+    }
+  </style>
+  <script>
+    //==================================================
+    //# 3자리 수마다 콤마 찍기
+    //==================================================
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    //==================================================
+    //# 검색
+    //==================================================
+    function search() {
+
+      // --------------------------------------------------
+      // # 검색 일자
+      // - 입력받은 날짜(YYYY-MM-DD)를 전송 가능한 형태(YYYYMMDD)로 변환한다.
+      // --------------------------------------------------
+
+      let boxOfficeDate; // 검색일자(형식 : YYYYMMDD)
+
+      // 코딩 ...
+      let date = $("#searchDate").val();
+      if(date.length === 10){
+        console.log("헬로")
+        boxOfficeDate = date.substring(0,4) + date.substring(5,7)+date.substring(8,10);
+      }
+
+      console.log("boxOfficeDate=", boxOfficeDate);
+
+      // --------------------------------------------------
+      // # Ajax
+      // --------------------------------------------------
+      $.ajax({
+
+        type : "get",
+        url : "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=16aa1c5a57dc77debdbe09fcb7c72591",
+        data : {
+          targetDt : boxOfficeDate
+        },
+        dataType : "json",
+
+        // --------------------------------------------------
+        // # 검색 성공
+        // --------------------------------------------------
+        success : function(result) {
+          result = result.boxOfficeResult;
+          console.log(result);
+          list = result.dailyBoxOfficeList;
+
+          let tr = "";
+          list.forEach(function(e, i){
+            tr += '<tr>'
+            list.forEach(function(el, idx){
+              if(Number(el.rank) === i+1){
+                tr += `<td>${el.rank}</td>`;
+                tr += `<td>${el.rankInten}</td>`;
+                tr += `<td>${el.rankOldAndNew}</td>`;
+                tr += `<td>${el.movieNm}</td>`;
+                tr += `<td>${el.openDt}</td>`;
+                tr += `<td>${el.audiCnt}</td>`;
+                tr += `<td>${el.audiAcc}</td>`;
+                tr += `<td>${el.salesAmt}</td>`;
+                tr += `<td>${el.scrnCnt}</td>`;
+                tr += `<td>${el.movieCd}</td>`;
+
+              }
+            })
+            tr += '</tr>';
+          })
+
+          $("#tableHeader").after(tr);
+
+        },
+
+        // --------------------------------------------------
+        // # 검색 실패
+        // --------------------------------------------------
+        error : function(xhr, status, error) {
+          alert("error");
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+<input type="date" id="searchDate">
+<input type="button" onclick="search()" value="박스오피스 조회">
+<hr width="90%">
+<div id="movieInfo"></div>
+<table>
+  <tr id="tableHeader">
+    <th>순위</th>
+    <th>증감율</th>
+    <th>신규진입</th>
+    <th>영화명</th>
+    <th>개봉일</th>
+    <th>일일관객수</th>
+    <th>누적관객수</th>
+    <th>누적매출액</th>
+    <th>스크린수</th>
+    <th>영화코드</th>
+  </tr>
+</table>
+</body>
+</html>

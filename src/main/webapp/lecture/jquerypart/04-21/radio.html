@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            let data = [
+                {id:"food", value:"ramen",selected:false,text:"라면"},
+                {id:"food", value:"kimbop",selected:true,text:"김밥"},
+                {id:"food", value:"pasta",selected:false,text:"파스타"}
+            ]
+
+
+            let selector = '<select id = "foodSelector">'
+
+            data.forEach(function(e, i) {
+                selector += '<option id:'+e.id+" value:"+e.value+"selected:"+e.selected+"text:"+e.text;
+            });
+
+            $("#food").after(selector);
+        })
+    </script>
+</head>
+<body>
+<div id="food"></div>
+</body>
+</html>
